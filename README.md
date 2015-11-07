@@ -14,13 +14,20 @@ Import header
 #import "WZPickerView.h"
 ```
 
+Declare that it implements the `WZPickerViewDelegate` protocol.
+```objective-c
+@interface YourViewController : UIViewController <WZPickerViewDelegate>
+```
+
 After import, call
 ```objective-c
 WZPickerView *pickerView = [WZPickerView showPickerOnView:yourView WithPickerType:(WZPickerViewType)type];
+pickerView.delegate = self;
 ```
 or
 ```objective-c
 WZPickerView *pickerView = [[WZPickerView alloc] initWithType:(WZPickerViewType)type];
+pickerView.delegate = self;
 [yourView addSubview:pickerView];
 [pickerView show];
 ```
